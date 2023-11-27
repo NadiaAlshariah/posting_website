@@ -1,48 +1,44 @@
-package posting_website;
+package posting_website.Post;
 
 import jakarta.persistence.*;
+import posting_website.User.AppUser;
 
 import java.util.Date;
 
 @Entity
 @Table
-public class Posts {
+public class Post {
     @Id
-    @SequenceGenerator(
-            name = "post_sequence",
-            sequenceName = "post_sequence",
-            allocationSize = 1
-    )
-
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "post_sequence"
-    )
+    @GeneratedValue
     private Long id;
-    private Long userId;
+
     private String content;
     private Date timePosted;
     private Long likesNumber;
     private Long commentsNumber;
 
-    public Posts() {
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private AppUser appUser;
+
+    public Post() {
     }
 
-    public Posts(Long id, Long userId, String content, Date timePosted, Long likesNumber, Long commentsNumber) {
+    public Post(Long id, String content, Date timePosted, Long likesNumber, Long commentsNumber, AppUser appUser) {
         this.id = id;
-        this.userId = userId;
         this.content = content;
         this.timePosted = timePosted;
         this.likesNumber = likesNumber;
         this.commentsNumber = commentsNumber;
+        this.appUser = appUser;
     }
 
-    public Posts(Long userId, String content, Date timePosted, Long likesNumber, Long commentsNumber) {
-        this.userId = userId;
+    public Post(String content, Date timePosted, Long likesNumber, Long commentsNumber, AppUser appUser) {
         this.content = content;
         this.timePosted = timePosted;
         this.likesNumber = likesNumber;
         this.commentsNumber = commentsNumber;
+        this.appUser = appUser;
     }
 
     public Long getId() {
@@ -51,14 +47,6 @@ public class Posts {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Long getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Long userId) {
-        this.userId = userId;
     }
 
     public String getContent() {
@@ -91,5 +79,13 @@ public class Posts {
 
     public void setCommentsNumber(Long commentsNumber) {
         this.commentsNumber = commentsNumber;
+    }
+
+    public AppUser getAppUser() {
+        return appUser;
+    }
+
+    public void setAppUser(AppUser appUser) {
+        this.appUser = appUser;
     }
 }

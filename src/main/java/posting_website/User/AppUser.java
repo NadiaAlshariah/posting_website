@@ -1,4 +1,4 @@
-package posting_website;
+package posting_website.User;
 
 import jakarta.persistence.*;
 
@@ -6,19 +6,10 @@ import java.util.Date;
 
 @Entity
 @Table
-public class User {
+public class AppUser {
 
     @Id
-    @SequenceGenerator(
-            name = "user_sequence",
-            sequenceName = "user_sequence",
-            allocationSize = 1
-    )
-
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "user_sequence"
-    )
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String hashed_password;
     private String display_name;
@@ -26,11 +17,11 @@ public class User {
     private String phone;
     private Date date_joined;
 
-    public User() {
+    public AppUser() {
 
     }
 
-    public User(Long id, String hashed_password, String display_name, String email, String phone, Date date_joined) {
+    public AppUser(Long id, String hashed_password, String display_name, String email, String phone, Date date_joined) {
         this.id = id;
         this.hashed_password = hashed_password;
         this.display_name = display_name;
@@ -39,7 +30,7 @@ public class User {
         this.date_joined = date_joined;
     }
 
-    public User(String hashed_password, String display_name, String email, String phone, Date date_joined) {
+    public AppUser(String hashed_password, String display_name, String email, String phone, Date date_joined) {
         this.hashed_password = hashed_password;
         this.display_name = display_name;
         this.email = email;
