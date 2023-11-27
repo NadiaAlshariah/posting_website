@@ -11,31 +11,31 @@ public class AppUser {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String hashed_password;
-    private String display_name;
+    private String hashedPassword;
+    private String displayName;
     private String email;
     private String phone;
-    private Date date_joined;
+    private Date dateJoined;
 
     public AppUser() {
 
     }
 
-    public AppUser(Long id, String hashed_password, String display_name, String email, String phone, Date date_joined) {
+    public AppUser(Long id, String hashedPassword, String displayName, String email, String phone, Date dateJoined) {
         this.id = id;
-        this.hashed_password = hashed_password;
-        this.display_name = display_name;
+        this.hashedPassword = hashedPassword;
+        this.displayName = displayName;
         this.email = email;
         this.phone = phone;
-        this.date_joined = date_joined;
+        this.dateJoined = dateJoined;
     }
 
-    public AppUser(String hashed_password, String display_name, String email, String phone, Date date_joined) {
-        this.hashed_password = hashed_password;
-        this.display_name = display_name;
+    public AppUser(String hashedPassword, String displayName, String email, String phone, Date dateJoined) {
+        this.hashedPassword = hashedPassword;
+        this.displayName = displayName;
         this.email = email;
         this.phone = phone;
-        this.date_joined = date_joined;
+        this.dateJoined = dateJoined;
     }
 
     public Long getId() {
@@ -46,20 +46,20 @@ public class AppUser {
         this.id = id;
     }
 
-    public String getHashed_password() {
-        return hashed_password;
+    public String getHashedPassword() {
+        return hashedPassword;
     }
 
-    public void setHashed_password(String hashed_password) {
-        this.hashed_password = hashed_password;
+    public void setHashedPassword(String hashed_password) {
+        this.hashedPassword = hashed_password;
     }
 
-    public String getDisplay_name() {
-        return display_name;
+    public String getDisplayName() {
+        return displayName;
     }
 
-    public void setDisplay_name(String display_name) {
-        this.display_name = display_name;
+    public void setDisplayName(String display_name) {
+        this.displayName = display_name;
     }
 
     public String getEmail() {
@@ -78,11 +78,11 @@ public class AppUser {
         this.phone = phone;
     }
 
-    public Date getDate_joined() {
-        return date_joined;
+    public Date getDateJoined() {
+        return dateJoined;
     }
 
-    public void setDate_joined(Date date_joined) {
-        this.date_joined = date_joined;
+    public void setDateJoined(Date date_joined) {
+        this.dateJoined = date_joined;
     }
 }

@@ -42,8 +42,8 @@ public class AppUserService {
         AppUser appUser = appUserRepository.findById(userId).orElseThrow(() -> new IllegalStateException(
                 "user with id " + userId + " doesnt exist"));
 
-        if (name != null && !name.isEmpty() && ! Objects.equals(appUser.getDisplay_name(), name)){
-            appUser.setDisplay_name(name);
+        if (name != null && !name.isEmpty() && ! Objects.equals(appUser.getDisplayName(), name)){
+            appUser.setDisplayName(name);
         }
 
         if (email != null && !email.isEmpty() && ! Objects.equals(appUser.getEmail(), email)){
