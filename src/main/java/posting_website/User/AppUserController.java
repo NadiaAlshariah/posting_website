@@ -26,8 +26,8 @@ public class AppUserController {
         appUserService.addNewUser(appUser);
     }
 
-    @DeleteMapping
-    public void deleteUser(@PathVariable("{userId}") Long id){
+    @DeleteMapping(path = "{userId}")
+    public void deleteUser(@PathVariable("userId") Long id){
         appUserService.deleteUser(id);
     }
 
@@ -39,6 +39,4 @@ public class AppUserController {
     ){
         appUserService.updateUser(userId, name, email);
     }
-
-
 }

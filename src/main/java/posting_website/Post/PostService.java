@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import posting_website.User.AppUser;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -22,6 +23,7 @@ public class PostService {
     }
 
     public void addPost(Post post){
+        post.setTimePosted(new Date());
         postRepository.save(post);
     }
 

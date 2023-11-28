@@ -4,6 +4,7 @@ import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -26,6 +27,7 @@ public class AppUserService {
         if (userOptional.isPresent()){
             throw new IllegalStateException("Email taken");
         }
+        appUser.setDateJoined(new Date());
         appUserRepository.save(appUser);
     }
 
