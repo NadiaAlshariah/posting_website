@@ -1,9 +1,12 @@
 package posting_website.Post;
 
 import jakarta.persistence.*;
+import posting_website.Comment.Comment;
 import posting_website.User.AppUser;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table
@@ -18,8 +21,13 @@ public class Post {
     private Long commentsNumber;
 
     @ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
     private AppUser appUser;
+
+    @OneToMany(mappedBy = "post")
+    private Set<Comment> comments = new HashSet<>();
+
+
 
     public Post() {
     }
@@ -87,5 +95,9 @@ public class Post {
 
     public void setAppUser(AppUser appUser) {
         this.appUser = appUser;
+    }
+
+    public Set<Comment> getComments() {
+        return comments;
     }
 }

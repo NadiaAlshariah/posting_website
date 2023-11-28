@@ -33,7 +33,7 @@ public class PostController {
     @PutMapping(path = "{postId}")
     public void updatePost(
             @PathVariable("postId") Long postId,
-            @RequestParam (required = false) String newContent){
+            @RequestParam (required = true) String newContent){
 
         postService.updatePost(postId, newContent);
     }

@@ -1,8 +1,11 @@
 package posting_website.User;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import posting_website.Comment.Comment;
+import posting_website.Post.Post;
 
-import java.util.Date;
+import java.util.*;
 
 @Entity
 @Table
@@ -16,6 +19,14 @@ public class AppUser {
     private String email;
     private String phone;
     private Date dateJoined;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "appUser", cascade = CascadeType.ALL)
+    private final Set<Post> posts = new HashSet<>();
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "appUser", cascade = CascadeType.ALL)
+    private Set<Comment> comments = new HashSet<>();
 
     public AppUser() {
 
@@ -36,6 +47,18 @@ public class AppUser {
         this.email = email;
         this.phone = phone;
         this.dateJoined = dateJoined;
+    }
+
+    public Set<Post> getPosts() {
+        return posts;
+    }
+
+    public Set<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(Set<Comment> comments) {
+        this.comments = comments;
     }
 
     public Long getId() {

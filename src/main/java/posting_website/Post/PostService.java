@@ -2,12 +2,10 @@ package posting_website.Post;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import posting_website.User.AppUser;
 
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
-import java.util.Optional;
 
 @Service
 public class PostService {
@@ -24,7 +22,12 @@ public class PostService {
 
     public void addPost(Post post){
         post.setTimePosted(new Date());
-        postRepository.save(post);
+        if (!post.getContent().isEmpty()){
+            postRepository.save(post);
+        }
+        else {
+            throw new IllegalStateException("post with id " + post.getId() + " is empty");
+        }
     }
 
     public void deletePost(Long postId) {
