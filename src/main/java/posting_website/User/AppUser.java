@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import posting_website.Comment.Comment;
 import posting_website.Post.Post;
+import posting_website.Reaction.Reaction;
 
 import java.util.*;
 
@@ -27,6 +28,10 @@ public class AppUser {
     @JsonIgnore
     @OneToMany(mappedBy = "appUser", cascade = CascadeType.ALL)
     private Set<Comment> comments = new HashSet<>();
+
+    @OneToOne(mappedBy = "appUser")
+    private Reaction reaction;
+
 
     public AppUser() {
 

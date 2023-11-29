@@ -2,6 +2,7 @@ package posting_website.Post;
 
 import jakarta.persistence.*;
 import posting_website.Comment.Comment;
+import posting_website.Reaction.Reaction;
 import posting_website.User.AppUser;
 
 import java.util.Date;
@@ -27,7 +28,8 @@ public class Post {
     @OneToMany(mappedBy = "post")
     private Set<Comment> comments = new HashSet<>();
 
-
+    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL)
+    private Set<Reaction> reactions = new HashSet<>();
 
     public Post() {
     }
