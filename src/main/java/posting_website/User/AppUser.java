@@ -29,8 +29,8 @@ public class AppUser {
     @OneToMany(mappedBy = "appUser", cascade = CascadeType.ALL)
     private Set<Comment> comments = new HashSet<>();
 
-    @OneToOne(mappedBy = "appUser")
-    private Reaction reaction;
+    @OneToMany(mappedBy = "appUser")
+    private Set<Reaction> reactions = new HashSet<>();
 
 
     public AppUser() {

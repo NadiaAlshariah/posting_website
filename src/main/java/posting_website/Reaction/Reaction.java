@@ -11,13 +11,13 @@ import java.util.Set;
 @Table
 public class Reaction {
     @Id
-    @OneToOne
-    @JoinColumn(name = "user_id")
+    @ManyToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
     private AppUser appUser;
 
     @Id
     @ManyToOne
-    @JoinColumn(name = "post_id")
+    @JoinColumn(name = "post_id", referencedColumnName = "id")
     private Post post;
 
     private String type;
