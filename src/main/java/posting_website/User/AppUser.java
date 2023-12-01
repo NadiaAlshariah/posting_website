@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import posting_website.Comment.Comment;
 import posting_website.Post.Post;
 import posting_website.Reaction.Reaction;
+import posting_website.Relationship.Relationship;
 
 import java.util.*;
 
@@ -31,6 +32,13 @@ public class AppUser {
 
     @OneToMany(mappedBy = "appUser")
     private Set<Reaction> reactions = new HashSet<>();
+
+    @OneToMany(mappedBy = "user")
+    private Set<Relationship> followers = new HashSet<>();
+
+    @OneToMany(mappedBy = "friend")
+    private Set<Relationship> following = new HashSet<>();
+
 
 
     public AppUser() {
