@@ -11,31 +11,31 @@ import java.util.Optional;
 
 @Service
 public class RelationshipService {
-    private final RelationsipRepository relationsipRepository;
+    private final RelationshipRepository relationshipRepository;
 
     @Autowired
-    public RelationshipService(RelationsipRepository relationsipRepository) {
-        this.relationsipRepository = relationsipRepository;
+    public RelationshipService(RelationshipRepository relationshipRepository) {
+        this.relationshipRepository = relationshipRepository;
     }
 
-    public List<Relationship> getRelationships(){return relationsipRepository.findAll();}
+    public List<Relationship> getRelationships(){return relationshipRepository.findAll();}
 
     public void addRelationship(Relationship relationship){
-        Optional<Relationship> relationshipOptional = relationsipRepository.findByUser(relationship.getUser(), relationship.getFriend());
+        Optional<Relationship> relationshipOptional = relationshipRepository.findByUser(relationship.getUser(), relationship.getFriend());
         if(relationshipOptional.isPresent()){
             throw new IllegalStateException("Already added");
         }
-        relationsipRepository.save(relationship);
+        relationshipRepository.save(relationship);
     }
 
     public void deleteRelationship(AppUser user, AppUser friend){
-        Relationship relationship = relationsipRepository.findByUser(user, friend).orElseThrow(()-> new IllegalStateException("these are not friends"));
-        relationsipRepository.delete(relationship);
+        Relationship relationship = relationshipRepository.findByUser(user, friend).orElseThrow(()-> new IllegalStateException("these are not friends"));
+        relationshipRepository.delete(relationship);
     }
 
     @Transactional
     public void updateRelationship(AppUser user, AppUser friend, String status){
-        Relationship relationship = relationsipRepository.findByUser(user, friend).orElseThrow(()-> new IllegalStateException("these are not friends"));
+        Relationship relationship = relationshipRepository.findByUser(user, friend).orElseThrow(()-> new IllegalStateException("these are not friends"));
         if(!Objects.equals(status, relationship.getStatus())){
             relationship.setStatus(status);
         }

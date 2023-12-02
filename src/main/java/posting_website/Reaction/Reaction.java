@@ -4,12 +4,14 @@ import jakarta.persistence.*;
 import posting_website.Post.Post;
 import posting_website.User.AppUser;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
 @Table
-public class Reaction {
+@IdClass(ReactionId.class)
+public class Reaction implements Serializable {
     @Id
     @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id")

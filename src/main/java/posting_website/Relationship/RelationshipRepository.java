@@ -7,8 +7,9 @@ import posting_website.User.AppUser;
 
 import java.util.Optional;
 
+
 @Repository
-public interface RelationsipRepository extends JpaRepository<Relationship, AppUser> {
-    @Query("SELECT s FROM Relationship s WHERE s.user = ? AND s.friend = ?1")
+public interface RelationshipRepository extends JpaRepository<Relationship, RelationshipId> {
+    @Query("SELECT s FROM Relationship s WHERE s.user = ?1 AND s.friend = ?2")
     Optional<Relationship> findByUser(AppUser user, AppUser friend);
 }

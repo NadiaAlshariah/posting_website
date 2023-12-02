@@ -6,6 +6,7 @@ import posting_website.User.AppUser;
 
 @Entity
 @Table
+@IdClass(RelationshipId.class)
 public class Relationship {
 
     @Id
