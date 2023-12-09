@@ -1,9 +1,11 @@
-package posting_website.Relationship;
+package posting_website.service;
 
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import posting_website.User.AppUser;
+import posting_website.model.AppUser;
+import posting_website.model.Relationship;
+import posting_website.repository.RelationshipRepository;
 
 import java.util.List;
 import java.util.Objects;

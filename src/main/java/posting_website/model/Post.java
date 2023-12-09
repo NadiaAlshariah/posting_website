@@ -1,9 +1,6 @@
-package posting_website.Post;
+package posting_website.model;
 
 import jakarta.persistence.*;
-import posting_website.Comment.Comment;
-import posting_website.Reaction.Reaction;
-import posting_website.User.AppUser;
 
 import java.util.Date;
 import java.util.HashSet;

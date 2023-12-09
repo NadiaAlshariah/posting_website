@@ -1,9 +1,10 @@
-package posting_website.Relationship;
+package posting_website.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import posting_website.Reaction.ReactionService;
-import posting_website.User.AppUser;
+import posting_website.service.RelationshipService;
+import posting_website.model.AppUser;
+import posting_website.model.Relationship;
 
 import java.util.List;
 

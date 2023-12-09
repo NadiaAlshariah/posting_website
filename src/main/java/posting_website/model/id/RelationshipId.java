@@ -1,6 +1,6 @@
-package posting_website.Relationship;
+package posting_website.model.id;
 
-import posting_website.User.AppUser;
+import posting_website.model.AppUser;
 
 import java.io.Serializable;
 

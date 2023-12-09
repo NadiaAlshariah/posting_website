@@ -1,10 +1,13 @@
-package posting_website.Reaction;
+package posting_website.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
-import posting_website.Post.Post;
-import posting_website.User.AppUser;
+import posting_website.model.Post;
+import posting_website.model.AppUser;
+import posting_website.model.Reaction;
+import posting_website.model.id.ReactionId;
+
 import java.util.Optional;
 
 @Repository

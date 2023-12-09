@@ -1,8 +1,6 @@
-package posting_website.Comment;
+package posting_website.model;
 
 import jakarta.persistence.*;
-import posting_website.Post.Post;
-import posting_website.User.AppUser;
 
 @Entity
 @Table

@@ -1,9 +1,11 @@
-package posting_website.Relationship;
+package posting_website.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
-import posting_website.User.AppUser;
+import posting_website.model.AppUser;
+import posting_website.model.Relationship;
+import posting_website.model.id.RelationshipId;
 
 import java.util.Optional;
 

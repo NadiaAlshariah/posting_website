@@ -1,10 +1,12 @@
-package posting_website.Reaction;
+package posting_website.service;
 
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import posting_website.Post.Post;
-import posting_website.User.AppUser;
+import posting_website.model.Post;
+import posting_website.model.AppUser;
+import posting_website.model.Reaction;
+import posting_website.repository.ReactionRepository;
 
 import java.util.List;
 import java.util.Objects;

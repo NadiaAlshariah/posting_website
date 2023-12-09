@@ -1,7 +1,9 @@
-package posting_website.Comment;
+package posting_website.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import posting_website.service.CommentService;
+import posting_website.model.Comment;
 
 import java.util.List;
 

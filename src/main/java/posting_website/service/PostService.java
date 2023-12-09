@@ -1,7 +1,9 @@
-package posting_website.Post;
+package posting_website.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import posting_website.model.Post;
+import posting_website.repository.PostRepository;
 
 import java.util.Date;
 import java.util.List;

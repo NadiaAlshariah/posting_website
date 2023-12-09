@@ -1,7 +1,7 @@
-package posting_website.Reaction;
+package posting_website.model.id;
 
-import posting_website.Post.Post;
-import posting_website.User.AppUser;
+import posting_website.model.Post;
+import posting_website.model.AppUser;
 
 import java.io.Serializable;
 

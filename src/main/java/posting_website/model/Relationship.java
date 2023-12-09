@@ -1,7 +1,7 @@
-package posting_website.Relationship;
+package posting_website.model;
 
 import jakarta.persistence.*;
-import posting_website.User.AppUser;
+import posting_website.model.id.RelationshipId;
 
 
 @Entity

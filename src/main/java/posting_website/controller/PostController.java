@@ -1,7 +1,9 @@
-package posting_website.Post;
+package posting_website.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import posting_website.service.PostService;
+import posting_website.model.Post;
 
 import java.util.List;
 

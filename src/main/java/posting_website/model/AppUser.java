@@ -1,11 +1,7 @@
-package posting_website.User;
+package posting_website.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import posting_website.Comment.Comment;
-import posting_website.Post.Post;
-import posting_website.Reaction.Reaction;
-import posting_website.Relationship.Relationship;
 
 import java.util.*;
 

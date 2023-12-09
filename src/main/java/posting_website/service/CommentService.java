@@ -1,7 +1,9 @@
-package posting_website.Comment;
+package posting_website.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import posting_website.model.Comment;
+import posting_website.repository.CommentRepository;
 
 import java.util.List;
 import java.util.Objects;

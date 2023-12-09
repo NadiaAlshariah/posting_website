@@ -1,12 +1,9 @@
-package posting_website.Reaction;
+package posting_website.model;
 
 import jakarta.persistence.*;
-import posting_website.Post.Post;
-import posting_website.User.AppUser;
+import posting_website.model.id.ReactionId;
 
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
 @Table
